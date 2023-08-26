@@ -7,21 +7,21 @@ app.use(express.json());
 
 const users = [
   {
-    username: 'user1',
-    password: 'password1',
+    username: 'kms',
+    password: 'kms',
   },
   {
-    username: 'user2',
-    password: 'password2',
+    username: 'mskwon',
+    password: 'mskwon',
   },
 ];
 
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  console.log(username, password);
+  const { id, password } = req.body;
+  console.log(id, password);
 
   const user = users.find(
-    (user) => user.username === username && user.password === password
+    (user) => user.username === id && user.password === password
   );
 
   if (user) {
